@@ -5,12 +5,13 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      - sudo yum install -y zip
+      - echo httpd status
+      - sudo systemctl status httpd
 
   build:
     commands:
       - echo Build started on `date`
-      - sudo zip hello.zip ./index.html ./aws.gif ./1.png ./back.jpg
+      - sudo cp ./index.html /var/www/html/index.html
    
 artifacts:
   type: 
